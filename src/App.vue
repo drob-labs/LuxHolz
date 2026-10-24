@@ -3,7 +3,7 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import InquiryDialog from './components/InquiryDialog.vue'
 
 type Language = 'en' | 'de'
-const language = ref<Language>('en')
+const language = ref<Language>('de')
 const mobileMenu = ref(false)
 const menuButton = ref<HTMLButtonElement | null>(null)
 const scrolled = ref(false)
@@ -94,7 +94,10 @@ watch(language, value => {
   document.title = value === 'en' ? 'LuxHolz — The Art of Living, From the Ground Up' : 'LuxHolz — Schönes Wohnen beginnt mit gutem Boden'
 })
 onMounted(() => {
-  try { if (localStorage.getItem('luxholz-language') === 'de') language.value = 'de' } catch { /* Use English by default. */ }
+  try {
+    const savedLanguage = localStorage.getItem('luxholz-language')
+    if (savedLanguage === 'de' || savedLanguage === 'en') language.value = savedLanguage
+  } catch { /* Use German by default. */ }
   updateScroll()
   window.addEventListener('scroll', updateScroll, { passive: true })
   observer = new IntersectionObserver(entries => {
@@ -110,7 +113,7 @@ onUnmounted(() => { observer?.disconnect(); window.removeEventListener('scroll',
   <header class="site-header" :class="{ 'is-scrolled': scrolled, 'menu-open': mobileMenu }">
     <a class="brand" href="#" :aria-label="language === 'en' ? 'LuxHolz home' : 'LuxHolz Startseite'" @click="mobileMenu = false"><img src="/images/luxholz-logo.svg" alt="LuxHolz" width="126" height="35" /></a>
     <nav class="desktop-nav" :aria-label="language === 'en' ? 'Main navigation' : 'Hauptnavigation'"><a v-for="(label, i) in t.nav.slice(0, 3)" :key="i" :href="`#${navIds[i]}`">{{ label }}</a></nav>
-    <div class="header-actions"><div class="language-switch" aria-label="Language"><button :class="{ active: language === 'en' }" :aria-pressed="language === 'en'" @click="chooseLanguage('en')">EN</button><span>/</span><button :class="{ active: language === 'de' }" :aria-pressed="language === 'de'" @click="chooseLanguage('de')">DE</button></div><a class="header-contact" href="#contact">{{ t.nav[3] }}<span aria-hidden="true">↗</span></a><button ref="menuButton" class="menu-toggle" :aria-label="mobileMenu ? t.menuClose : t.menuOpen" :aria-expanded="mobileMenu" aria-controls="mobile-navigation" @click="mobileMenu = !mobileMenu"><span></span><span></span></button></div>
+    <div class="header-actions"><div class="language-switch" :aria-label="language === 'de' ? 'Sprache' : 'Language'"><button :class="{ active: language === 'de' }" :aria-pressed="language === 'de'" @click="chooseLanguage('de')">DE</button><span>/</span><button :class="{ active: language === 'en' }" :aria-pressed="language === 'en'" @click="chooseLanguage('en')">EN</button></div><a class="header-contact" href="#contact">{{ t.nav[3] }}<span aria-hidden="true">↗</span></a><button ref="menuButton" class="menu-toggle" :aria-label="mobileMenu ? t.menuClose : t.menuOpen" :aria-expanded="mobileMenu" aria-controls="mobile-navigation" @click="mobileMenu = !mobileMenu"><span></span><span></span></button></div>
     <nav v-if="mobileMenu" id="mobile-navigation" class="mobile-nav" :aria-label="t.menuOpen" @keydown.esc="closeMobileMenu"><a v-for="(label, i) in t.nav" :key="i" :href="`#${navIds[i]}`" @click="mobileMenu = false"><span>0{{ i + 1 }}</span>{{ label }}<span>↗</span></a><a href="tel:+41764923008">+41 76 492 30 08</a></nav>
   </header>
   <main id="main">
