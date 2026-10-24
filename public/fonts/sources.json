@@ -1,0 +1,19 @@
+{
+  "provider": "Google Fonts",
+  "license": "SIL Open Font License",
+  "files": [
+    {
+      "name": "cormorant-garamond-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2"
+    },
+    {
+      "name": "cormorant-garamond-italic-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2"
+    },
+    {
+      "name": "manrope-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2"
+    }
+  ],
+  "note": "Latin subsets with Western European accented characters. Files contain variable weight axes; declare 400 500 Cormorant normal and 400 600 Manrope normal. Cormorant italic use 400."
+}
