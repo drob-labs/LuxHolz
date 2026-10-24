@@ -6,33 +6,13 @@
       "source": "https://www.luxholz.ch/images/logo.svg"
     },
     {
-      "file": "hero-interior.webp",
-      "source": "https://www.luxholz.ch/images/mission.png"
-    },
-    {
-      "file": "bedroom-interior.webp",
-      "source": "https://www.luxholz.ch/images/bedroom.png"
-    },
-    {
       "file": "parquet-detail.webp",
       "source": "https://www.luxholz.ch/images/parket.webp"
     },
     {
       "file": "vinyl-detail.webp",
       "source": "https://www.luxholz.ch/images/vinyl-floor.png"
-    },
-    {
-      "file": "skirting-detail.webp",
-      "source": "https://www.luxholz.ch/images/skirting-board.png"
-    },
-    {
-      "file": "parquet-lifestyle.webp",
-      "source": "https://www.luxholz.ch/images/girl-on-parket.png"
-    },
-    {
-      "file": "footer-interior.webp",
-      "source": "https://www.luxholz.ch/images/footerImg.webp"
     }
   ],
-  "notes": "Original website image assets, recompressed to WebP quality 85 with no enlargement. Photography describes the company published visual material, not independently verified installed projects."
+  "notes": "Product images are published on the LuxHolz website and recompressed to WebP quality 85 with no enlargement. The skirting profile is a hand-drawn vector illustration, not a product photograph."
 }

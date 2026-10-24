@@ -237,3 +237,31 @@ section[id]{scroll-margin-top:0}
 
 @media(max-width:800px){.mobile-nav{max-height:calc(100dvh - 78px);overflow-y:auto;overscroll-behavior:contain}}
 @media(max-width:600px){.mobile-nav{max-height:calc(100dvh - 76px)}}
+
+/* Restrained, consistent line icons */
+.button>.lux-icon{width:16px;height:16px;transition:transform .3s}
+.button:hover>.lux-icon{transform:translate(3px,-3px)}
+.text-link>.lux-icon{width:16px;height:16px}
+.header-contact>.lux-icon{width:15px;height:15px}
+.scroll-circle>.lux-icon{width:14px;height:14px}
+.material-arrow{width:20px;height:20px}
+.swiss-cross>.lux-icon{width:21px;height:21px}
+.image-cta>.lux-icon{width:18px;height:18px;transition:transform .3s}
+.collection-image:hover .image-cta>.lux-icon{transform:rotate(45deg)}
+.collection-info h3 button>.lux-icon{width:20px;height:20px;opacity:0;transition:opacity .25s}
+.collection-card:hover .collection-info h3 button>.lux-icon,.collection-info h3 button:focus-visible>.lux-icon{opacity:1}
+.tab-check>.lux-icon{width:10px;height:10px;stroke-width:1.8}
+.material-pin>.lux-icon{width:16px;height:16px}
+.material-specs li>.lux-icon{width:12px;height:12px;color:#c9b195}
+.story-caption>.lux-icon{width:16px;height:16px}
+.trade-symbol{width:48px;height:48px}
+.trade-email{display:flex;align-items:center;gap:10px}
+.trade-email>.lux-icon{width:14px;height:14px}
+.faq-icon{width:17px;height:17px;min-width:17px}
+.footer-connect a{display:flex;align-items:center;gap:7px}
+.footer-connect a>.lux-icon{width:13px;height:13px}
+.footer-bottom>div>a:not(:last-child){display:flex;align-items:center;gap:6px}
+.footer-bottom>div>a>.lux-icon{width:12px;height:12px}
+.footer-bottom>div>a:last-child>.lux-icon{width:15px;height:15px}
+.mobile-nav>a>.lux-icon{width:16px;height:16px;margin-left:auto}
+.product-dialog .dialog-close>.lux-icon{width:17px;height:17px}
